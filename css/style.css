@@ -1,0 +1,25 @@
+/*h2{
+	border: 1px solid black;
+}*/
+.container {
+  width: 60%; }
+
+#headingWrapper > *, .dataRow > * {
+  border: 1px solid black; }
+
+#headingWrapper, .dataRow {
+  display: flex; }
+
+.colTotalPoints {
+  flex-basis: 25%; }
+
+.colPoints {
+  flex-basis: 25%; }
+
+.colName {
+  flex-basis: 40%; }
+
+.colNumber {
+  flex-basis: 10%; }
+
+/*# sourceMappingURL=style.css.map */
