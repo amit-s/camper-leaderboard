@@ -4,6 +4,22 @@ $row-background-color: rgba(172, 173, 148, 0.5);
 $row-font-color: rgba(0, 0, 0, 1);
 $column-select-color: rgba(8, 76, 97, 0.5);
 
+%flexbox {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+ }
+
+ @mixin flexbasis($val){
+ 	-webkit-box-flex-basis: $val;      /* OLD - iOS 6-, Safari 3.1-6 */
+  	-moz-box-flex-basis: $val;         /* OLD - Firefox 19- */  	
+  	-webkit-flex-basis: $val;          /* Chrome */
+  	-ms-flex-basis: $val;              /* IE 10 */
+  	flex-basis: $val;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+ }
+
 body{
 	background: url("../img/seigaiha.png");
 }
@@ -15,8 +31,7 @@ h2{
 }
 
 .container{
-	width: 50%;
-	margin:{
+		margin:{
 		top: 20px;
 		bottom: 20px;
 	}
@@ -24,21 +39,21 @@ h2{
 };
 
 #headingWrapper{
-	display: flex;
+	@extend %flexbox;
 	margin-bottom: 20px;
 	border-bottom: 1px solid black;
 	font:{
 		family: 'Lalezar', cursive;
-		size: 1.5em;
+		/*size: 1.5em;*/
 	}
 }
 
 .dataRow{
-	display: flex;
+	@extend %flexbox;
 	padding: 4px;
 	font:{
 		family: 'Patua One', cursive;
-		size: 1.3em;
+		/*size: 1.3em;*/
 	}
 	&:hover{
 		background: $row-hover-background-color;
@@ -51,15 +66,18 @@ h2{
 	}
 }
 .colPointsWidth{
-	flex-basis: 30%;	
+	/*flex-basis: 25%;	*/
+	@include flexbasis(25%);
 }
 
 .colName{
-	flex-basis: 34%;
+	/*flex-basis: 46%;*/
+	@include flexbasis(46%);
 }
 
 .colNumber{
-	flex-basis: 6%;
+	/*flex-basis: 4%;*/
+	@include flexbasis(4%);
 }
 
 img{
@@ -79,3 +97,29 @@ a:link, a:visited{
 	background: $column-select-color;
 	border-radius: 10px;
 }
+
+@media only screen and (min-width:545px){
+	#headingWrapper{
+	font-size: 1.2em;
+	}
+
+	.dataRow{	
+	font-size: 1.1em;	
+	}	
+}/*min-width: 545px*/
+
+@media only screen and (min-width:645px){
+	#headingWrapper{
+	font-size: 1.4em;
+	}
+
+	.dataRow{	
+	font-size: 1.3em;	
+	}	
+}/*min-width: 645px*/
+
+@media only screen and (min-width:992px){
+	.container{
+		width: 60%;
+	}	
+}/*min-width: 992px*/
