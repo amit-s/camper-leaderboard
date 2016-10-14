@@ -2,7 +2,7 @@
 	border: 1px solid black;
 }*/
 .container {
-  width: 60%; }
+  width: 50%; }
 
 #headingWrapper > *, .dataRow > * {
   border: 1px solid black; }
@@ -20,6 +20,12 @@
   flex-basis: 40%; }
 
 .colNumber {
-  flex-basis: 10%; }
+  flex-basis: 5%; }
+
+img {
+  margin: 1px;
+  height: 40px;
+  width: 40px;
+  border: 2px solid black; }
 
 /*# sourceMappingURL=style.css.map */
