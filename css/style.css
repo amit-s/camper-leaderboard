@@ -23,13 +23,13 @@ h2 {
   cursor: pointer; }
 
 .colPointsWidth {
-  flex-basis: 25%; }
+  flex-basis: 30%; }
 
 .colName {
-  flex-basis: 40%; }
+  flex-basis: 30%; }
 
 .colNumber {
-  flex-basis: 5%; }
+  flex-basis: 6%; }
 
 img {
   margin: 1px;
@@ -37,7 +37,7 @@ img {
   width: 40px;
   border-radius: 50%; }
 
-a:link {
+a:link, a:visited {
   text-decoration: none;
   color: black; }
 
