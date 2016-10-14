@@ -8,7 +8,7 @@ export default class LeaderBoardData extends React.Component{
 		return(
 			<div>
 				{this.props.data.map((userInfo, index)=>{
-					url = `www.freecodecamp.com/${userInfo.username}`;
+					url = `https://www.freecodecamp.com/${userInfo.username}`;
 					return(
 						<a href={url} target="blank"  key={index}>
 						<div className="dataRow">

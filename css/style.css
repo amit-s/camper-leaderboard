@@ -1,35 +1,83 @@
+#headingWrapper, .dataRow {
+  display: -webkit-box;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;
+  /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;
+  /* TWEENER - IE 10 */
+  display: -webkit-flex;
+  /* NEW - Chrome */
+  display: flex;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */ }
+
+body {
+  background: url("../img/seigaiha.png"); }
+
 h2 {
   font-family: 'Patua One', cursive; }
 
 .container {
-  width: 50%;
-  border: 1px solid black; }
+  /*width: 50%;*/
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: rgba(79, 109, 122, 0.3); }
 
 #headingWrapper {
-  display: flex;
+  /*display: flex;*/
   margin-bottom: 20px;
+  border-bottom: 1px solid black;
   font-family: 'Lalezar', cursive;
-  font-size: 1.5em; }
+  /*size: 1.5em;*/ }
 
 .dataRow {
-  display: flex;
+  /*display: flex;*/
   padding: 4px;
   font-family: 'Patua One', cursive;
-  font-size: 1.3em; }
+  /*size: 1.3em;*/ }
   .dataRow:hover {
-    background: rgba(172, 173, 148, 0.7); }
+    background: #56a3a6; }
 
 .colPoints:hover {
   cursor: pointer; }
 
 .colPointsWidth {
-  flex-basis: 25%; }
+  /*flex-basis: 25%;	*/
+  -webkit-box-flex-basis: 25%;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex-basis: 25%;
+  /* OLD - Firefox 19- */
+  -webkit-flex-basis: 25%;
+  /* Chrome */
+  -ms-flex-basis: 25%;
+  /* IE 10 */
+  flex-basis: 25%;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */ }
 
 .colName {
-  flex-basis: 40%; }
+  /*flex-basis: 46%;*/
+  -webkit-box-flex-basis: 46%;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex-basis: 46%;
+  /* OLD - Firefox 19- */
+  -webkit-flex-basis: 46%;
+  /* Chrome */
+  -ms-flex-basis: 46%;
+  /* IE 10 */
+  flex-basis: 46%;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */ }
 
 .colNumber {
-  flex-basis: 5%; }
+  /*flex-basis: 4%;*/
+  -webkit-box-flex-basis: 4%;
+  /* OLD - iOS 6-, Safari 3.1-6 */
+  -moz-box-flex-basis: 4%;
+  /* OLD - Firefox 19- */
+  -webkit-flex-basis: 4%;
+  /* Chrome */
+  -ms-flex-basis: 4%;
+  /* IE 10 */
+  flex-basis: 4%;
+  /* NEW, Spec - Opera 12.1, Firefox 20+ */ }
 
 img {
   margin: 1px;
@@ -37,8 +85,31 @@ img {
   width: 40px;
   border-radius: 50%; }
 
-a:link {
+a:link, a:visited {
   text-decoration: none;
   color: black; }
+
+.colSelected {
+  background: rgba(8, 76, 97, 0.5);
+  border-radius: 10px; }
+
+@media only screen and (min-width: 545px) {
+  #headingWrapper {
+    font-size: 1.2em; }
+
+  .dataRow {
+    font-size: 1.1em; } }
+/*min-width: 545px*/
+@media only screen and (min-width: 645px) {
+  #headingWrapper {
+    font-size: 1.4em; }
+
+  .dataRow {
+    font-size: 1.3em; } }
+/*min-width: 645px*/
+@media only screen and (min-width: 992px) {
+  .container {
+    width: 60%; } }
+/*min-width: 992px*/
 
 /*# sourceMappingURL=style.css.map */

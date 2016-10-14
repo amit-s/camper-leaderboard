@@ -1,31 +1,59 @@
-$row-hover-background-color: rgba(172, 173, 148, 0.7);
+$board-background-color: rgba(79, 109, 122, 0.3);
+$row-hover-background-color: rgba(86, 163, 166, 1);
 $row-background-color: rgba(172, 173, 148, 0.5);
 $row-font-color: rgba(0, 0, 0, 1);
+$column-select-color: rgba(8, 76, 97, 0.5);
+
+%flexbox {
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+ }
+
+ @mixin flexbasis($val){
+ 	-webkit-box-flex-basis: $val;      /* OLD - iOS 6-, Safari 3.1-6 */
+  	-moz-box-flex-basis: $val;         /* OLD - Firefox 19- */  	
+  	-webkit-flex-basis: $val;          /* Chrome */
+  	-ms-flex-basis: $val;              /* IE 10 */
+  	flex-basis: $val;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+ }
+
+body{
+	background: url("../img/seigaiha.png");
+}
+
 
 h2{
 	font-family: 'Patua One', cursive;
+
 }
 
 .container{
-	width: 50%;
-	border: 1px solid black;
-}
+		margin:{
+		top: 20px;
+		bottom: 20px;
+	}
+	background: $board-background-color;
+};
 
 #headingWrapper{
-	display: flex;
+	@extend %flexbox;
 	margin-bottom: 20px;
+	border-bottom: 1px solid black;
 	font:{
 		family: 'Lalezar', cursive;
-		size: 1.5em;
+		/*size: 1.5em;*/
 	}
 }
 
 .dataRow{
-	display: flex;
+	@extend %flexbox;
 	padding: 4px;
 	font:{
 		family: 'Patua One', cursive;
-		size: 1.3em;
+		/*size: 1.3em;*/
 	}
 	&:hover{
 		background: $row-hover-background-color;
@@ -38,15 +66,18 @@ h2{
 	}
 }
 .colPointsWidth{
-	flex-basis: 25%;	
+	/*flex-basis: 25%;	*/
+	@include flexbasis(25%);
 }
 
 .colName{
-	flex-basis: 40%;
+	/*flex-basis: 46%;*/
+	@include flexbasis(46%);
 }
 
 .colNumber{
-	flex-basis: 5%;
+	/*flex-basis: 4%;*/
+	@include flexbasis(4%);
 }
 
 img{
@@ -56,8 +87,39 @@ img{
 	border-radius: 50%;
 }
 
-a:link{
+
+a:link, a:visited{
 	text-decoration: none;
 	color: $row-font-color;
 }
 
+.colSelected{
+	background: $column-select-color;
+	border-radius: 10px;
+}
+
+@media only screen and (min-width:545px){
+	#headingWrapper{
+	font-size: 1.2em;
+	}
+
+	.dataRow{	
+	font-size: 1.1em;	
+	}	
+}/*min-width: 545px*/
+
+@media only screen and (min-width:645px){
+	#headingWrapper{
+	font-size: 1.4em;
+	}
+
+	.dataRow{	
+	font-size: 1.3em;	
+	}	
+}/*min-width: 645px*/
+
+@media only screen and (min-width:992px){
+	.container{
+		width: 60%;
+	}	
+}/*min-width: 992px*/
