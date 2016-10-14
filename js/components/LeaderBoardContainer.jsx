@@ -19,8 +19,8 @@ export default class LeaderBoardContainer extends React.Component{
 			success: (data)=>this.setState({data}),
 			error: (error)=>console.log(error)
 		})
-		$("#points30").show();
-		$("#pointsAll").hide();
+		$("#points30").addClass("colSelected");
+		$("#pointsAll").removeClass("colSelected");
 	}
 
 	getTotalPoints(){
@@ -29,8 +29,8 @@ export default class LeaderBoardContainer extends React.Component{
 			success: (data)=>this.setState({data}),
 			error: (error)=>console.log(error)
 		})
-		$("#points30").hide();
-		$("#pointsAll").show();
+		$("#points30").removeClass("colSelected");
+		$("#pointsAll").addClass("colSelected");
 	}
 	render(){
 		return(
@@ -39,8 +39,8 @@ export default class LeaderBoardContainer extends React.Component{
 				<div id="headingWrapper" className="text-center">
 					<div className="colNumber">#</div>
 					<div className="colName">Camper Name</div>
-					<div className="colPoints colPointsWidth" onClick={this.getRecentPoints.bind(this)}>Points in past 30 days</div>
-					<div className="colPoints colPointsWidth" onClick={this.getTotalPoints.bind(this)}>All time points</div>
+					<div id="points30" className="colPoints colPointsWidth" onClick={this.getRecentPoints.bind(this)}>Points in past 30 days</div>
+					<div id="pointsAll" className="colPoints colPointsWidth" onClick={this.getTotalPoints.bind(this)}>All time points</div>
 				</div>
 				<div id="leaderboardData">
 					<LeaderBoardData data={this.state.data} />

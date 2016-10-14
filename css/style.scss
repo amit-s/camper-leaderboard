@@ -1,19 +1,32 @@
-$row-hover-background-color: rgba(172, 173, 148, 0.7);
+$board-background-color: rgba(79, 109, 122, 0.3);
+$row-hover-background-color: rgba(86, 163, 166, 1);
 $row-background-color: rgba(172, 173, 148, 0.5);
 $row-font-color: rgba(0, 0, 0, 1);
+$column-select-color: rgba(8, 76, 97, 0.5);
+
+body{
+	background: url("../img/seigaiha.png");
+}
+
 
 h2{
 	font-family: 'Patua One', cursive;
+
 }
 
 .container{
 	width: 50%;
-	border: 1px solid black;
-}
+	margin:{
+		top: 20px;
+		bottom: 20px;
+	}
+	background: $board-background-color;
+};
 
 #headingWrapper{
 	display: flex;
 	margin-bottom: 20px;
+	border-bottom: 1px solid black;
 	font:{
 		family: 'Lalezar', cursive;
 		size: 1.5em;
@@ -42,7 +55,7 @@ h2{
 }
 
 .colName{
-	flex-basis: 30%;
+	flex-basis: 34%;
 }
 
 .colNumber{
@@ -57,9 +70,12 @@ img{
 }
 
 
-	a:link, a:visited{
+a:link, a:visited{
 	text-decoration: none;
 	color: $row-font-color;
-	}
+}
 
-
+.colSelected{
+	background: $column-select-color;
+	border-radius: 10px;
+}

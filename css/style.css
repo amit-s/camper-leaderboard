@@ -1,13 +1,19 @@
+body {
+  background: url("../img/seigaiha.png"); }
+
 h2 {
   font-family: 'Patua One', cursive; }
 
 .container {
   width: 50%;
-  border: 1px solid black; }
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: rgba(79, 109, 122, 0.3); }
 
 #headingWrapper {
   display: flex;
   margin-bottom: 20px;
+  border-bottom: 1px solid black;
   font-family: 'Lalezar', cursive;
   font-size: 1.5em; }
 
@@ -17,7 +23,7 @@ h2 {
   font-family: 'Patua One', cursive;
   font-size: 1.3em; }
   .dataRow:hover {
-    background: rgba(172, 173, 148, 0.7); }
+    background: #56a3a6; }
 
 .colPoints:hover {
   cursor: pointer; }
@@ -26,7 +32,7 @@ h2 {
   flex-basis: 30%; }
 
 .colName {
-  flex-basis: 30%; }
+  flex-basis: 34%; }
 
 .colNumber {
   flex-basis: 6%; }
@@ -40,5 +46,9 @@ img {
 a:link, a:visited {
   text-decoration: none;
   color: black; }
+
+.colSelected {
+  background: rgba(8, 76, 97, 0.5);
+  border-radius: 10px; }
 
 /*# sourceMappingURL=style.css.map */
