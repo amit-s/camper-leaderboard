@@ -39,8 +39,8 @@ export default class LeaderBoardContainer extends React.Component{
 				<div id="headingWrapper" className="text-center">
 					<div className="colNumber">#</div>
 					<div className="colName">Camper Name</div>
-					<div className="colPoints" onClick={this.getRecentPoints.bind(this)}>Points in past 30 days<span id="points30" className="glyphicon glyphicon-chevron-down"></span></div>
-					<div className="colTotalPoints" onClick={this.getTotalPoints.bind(this)}>All time points<span id="pointsAll" className="glyphicon glyphicon-chevron-down"></span></div>
+					<div className="colPoints colPointsWidth" onClick={this.getRecentPoints.bind(this)}>Points in past 30 days</div>
+					<div className="colPoints colPointsWidth" onClick={this.getTotalPoints.bind(this)}>All time points</div>
 				</div>
 				<div id="leaderboardData">
 					<LeaderBoardData data={this.state.data} />

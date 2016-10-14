@@ -1,26 +1,44 @@
-/*h2{
-	border: 1px solid black;
-}*/
+$row-hover-background-color: rgba(172, 173, 148, 0.7);
+$row-background-color: rgba(172, 173, 148, 0.5);
+$row-font-color: rgba(0, 0, 0, 1);
+
+h2{
+	font-family: 'Patua One', cursive;
+}
 
 .container{
 	width: 50%;
-}
-
-#headingWrapper > *, .dataRow > *{
 	border: 1px solid black;
 }
 
-
-#headingWrapper, .dataRow{
+#headingWrapper{
 	display: flex;
+	margin-bottom: 20px;
+	font:{
+		family: 'Lalezar', cursive;
+		size: 1.5em;
+	}
 }
 
-.colTotalPoints{
-	flex-basis: 25%;
+.dataRow{
+	display: flex;
+	padding: 4px;
+	font:{
+		family: 'Patua One', cursive;
+		size: 1.3em;
+	}
+	&:hover{
+		background: $row-hover-background-color;
+	}
 }
 
 .colPoints{
-	flex-basis: 25%;
+	&:hover{
+		cursor: pointer;
+	}
+}
+.colPointsWidth{
+	flex-basis: 25%;	
 }
 
 .colName{
@@ -35,5 +53,11 @@ img{
 	margin: 1px;
 	height: 40px;
 	width: 40px;
-	border: 2px solid black;
+	border-radius: 50%;
 }
+
+a:link{
+	text-decoration: none;
+	color: $row-font-color;
+}
+
